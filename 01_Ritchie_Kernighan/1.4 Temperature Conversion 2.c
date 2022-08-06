@@ -20,8 +20,5 @@ int main(){
         celsius+=step;
 
     }
-    
-
-
     return 0;
 }
