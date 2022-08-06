@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+/* putchar() getchar() example */
+
 int main() {
 
     int c;
