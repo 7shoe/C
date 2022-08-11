@@ -9,7 +9,7 @@ int intRange(){
     upper = 0;
     prev = 0; 
     for(int k = 1; k < MAXLEN; ++k){
-        printf("%d\n", (int)k - (int)prev);
+        //printf("%d\n", (int)k - (int)prev);
         if((int)k - (int)prev != 1){
             upper = prev;
             printf("break");
@@ -20,8 +20,8 @@ int intRange(){
 
     prev = 0;
     for(int k = -1; k > -1 * MAXLEN; --k){
-        printf("%d\n", (int)k - (int)prev);
-        if((int)k - (int)prev != -1){
+        //printf("%d\n", (int)k - (int)prev);
+        if((int)k - (int)prev != 1){
             lower = prev;
             printf("break");
             break;
