@@ -22,7 +22,16 @@ int main(){
 
     // ... is therefore equivalent to: 
     if((a==777 && a-1==788) || a-1==776){
-        printf("Oh oh\n");
+        printf("Oh oh\n\n");
+    }
+
+    // Relations '<' vs. logical operators (&&, ||)
+    int b;
+    a = 5;
+    b = 7;
+
+    if(a==5 && b==5){
+        printf("ok.");
     }
 
 
