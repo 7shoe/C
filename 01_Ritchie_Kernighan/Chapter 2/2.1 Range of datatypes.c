@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAXLEN 1000000
+#define MAXLEN 100000
 
 int intRange(){
 
