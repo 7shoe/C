@@ -22,11 +22,17 @@ int main() {
 
 
     // actual computation
+    printf("Size of unsigned short : \t\t");
+    printUnsignedRange(sizeof(short));
+
     printf("Size of unsigned int : \t\t");
     printUnsignedRange(sizeof(int));
 
     printf("Size of unsigned long : \t\t");
     printUnsignedRange(sizeof(long));
+
+    printf("\nSize of short : \t\t");
+    printSignedRange(sizeof(short));
 
     printf("\nSize of int : \t\t");
     printSignedRange(sizeof(int));
