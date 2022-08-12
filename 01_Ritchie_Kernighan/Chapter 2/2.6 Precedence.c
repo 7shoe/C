@@ -15,7 +15,7 @@ int main(){
     printf("The last entry was not checked! In turn, cd should be still 5. And it is %d! :-)\n\n", cd);
 
     // 2nd example && (logical and) has precedence over || (logical or)
-    int a = 777;
+    int a = 77;
     if(a==777 && a-1==799 || a-1==776){
         printf("Oh oh\n");
     }
