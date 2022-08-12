@@ -9,7 +9,7 @@ int main(){
     enum months currentMonth;
     currentMonth = AUG;
 
-    printf('Current Month is the %d-th month of the year!: ', currentMonth);
+    printf("Current Month is the %d-th month of the year! ", currentMonth);
 
 
     return 0;
