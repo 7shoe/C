@@ -2,7 +2,7 @@
 
 
 int isleapYear(int yyyy){
-    if((yyyy % 4 == 0) & ((yyyy % 100 != 0) | (yyyy % 400 == 0))){
+    if((yyyy % 4 == 0) && ((yyyy % 100 != 0) || (yyyy % 400 == 0))){
         return 1; 
     }
     return 0; 
