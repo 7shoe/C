@@ -26,9 +26,10 @@ int main(){
     }
 
     // Relations '<' vs. logical operators (&&, ||)
-    int b;
+    int b, c;
     a = 5;
     b = 7;
+    c = 11;
 
     if(a==5 && b==5){
         printf("ok.");
