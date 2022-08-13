@@ -6,18 +6,18 @@ int isPalindrome(char s[]){
     int end; 
 
     if(size % 2==1){
-        for(int i=0; i < (size+1)/2; ++i){
-             if(s[i]!=s[size-1-i]){
-                return 0;
-             }
-        }
+        end = (size+1)/2;
     }else{
-        for(int i=0; i < size/2; ++i){
-            if(s[i]!=s[size-1-i]){
-                return 0;
-            }
+        end = size/2;
+    }
+
+    for(int i=0; i < end; ++i){
+        if(s[i] != s[size-1-i]){
+            printf("s[i]: %c != %c s[n-1-i]", s[i], s[size-1-i]);
         }
     }
+    
+    printf("end: %d\n\n", end);
     
     return 1;
 
