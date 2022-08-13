@@ -6,10 +6,12 @@ int isPalindrome(char s[]){
     int size = strlen(s) - 1;
     int end; 
 
+    printf("size: %d\n\n", size);
+
     if(size % 2==1){
         end = (size+1)/2;
     }else{
-        end = size/2;
+        end = (size+1)/2;
     }
 
     for(int i=0; i < end; ++i){
@@ -32,10 +34,10 @@ int main(){
     char s_3[5] = {'c', 'i', 'v', 'i', 'c'};
     char s_4[2] = {'c', 'i'};
 
-    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_1));
-    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_2));
-    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_3));
-    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_4));
+    printf("Hello. \t\t Is Palindrome? %d\n", isPalindrome(s_1));
+    printf("Rentner. \t Is Palindrome? %d\n", isPalindrome(s_2));
+    printf("civic. \t\t Is Palindrome? %d\n", isPalindrome(s_3));
+    printf("ci. \t\t Is Palindrome? %d\n", isPalindrome(s_4));
 
 
     return 0;
