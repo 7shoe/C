@@ -29,7 +29,7 @@ int isPalindrome(char s[]){
 
 int main(){
 
-    char s_1[6] = {'H', 'e', 'l', 'l', 'e', 'H'};
+    char s_1[6] = {'H', 'E', 'l', 'l', 'e', 'H'};
     char s_2[7] = {'r', 'e', 'n', 't', 'n', 'e', 'r'};
     char s_3[5] = {'c', 'i', 'v', 'i', 'c'};
     char s_4[2] = {'c', 'i'};
