@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include <string.h>
 
 int isPalindrome(char s[]){
 
-    int size = sizeof s / sizeof s[0];
+    int size = strlen(s) - 1;
     int end; 
 
     if(size % 2==1){
@@ -12,8 +13,8 @@ int isPalindrome(char s[]){
     }
 
     for(int i=0; i < end; ++i){
-        if(s[i] != s[size-2-i]){
-            printf("- s[i]: %c != %c s[n-1-i]\n", s[i], s[size-1-i]);
+        if(s[i] != s[size-i]){
+            return 0;
         }
     }
     
@@ -29,8 +30,12 @@ int main(){
     char s_1[6] = {'H', 'e', 'l', 'l', 'e', 'H'};
     char s_2[7] = {'r', 'e', 'n', 't', 'n', 'e', 'r'};
     char s_3[5] = {'c', 'i', 'v', 'i', 'c'};
+    char s_4[2] = {'c', 'i'};
 
-    printf("Hello. Is Palindrome? %d", isPalindrome(s_1));
+    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_1));
+    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_2));
+    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_3));
+    printf("Hello. Is Palindrome? %d\n", isPalindrome(s_4));
 
 
     return 0;
