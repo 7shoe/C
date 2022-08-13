@@ -13,7 +13,7 @@ int isPalindrome(char s[]){
 
     for(int i=0; i < end; ++i){
         if(s[i] != s[size-1-i]){
-            printf("s[i]: %c != %c s[n-1-i]", s[i], s[size-1-i]);
+            printf("- s[i]: %c != %c s[n-1-i]\n", s[i], s[size-1-i]);
         }
     }
     
