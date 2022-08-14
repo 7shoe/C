@@ -22,7 +22,7 @@ double monteCarloPi(long long n){
 
 int main(){
 
-    printf("Pi hat = %f", monteCarloPi(10000000));     // 30s, yields 3.141580 --> Err=1.26 * 10^5
+    printf("Pi hat = %f", monteCarloPi(100000000));     // 30s, yields 3.141580 --> Err=1.26 * 10^5
 
 
     return 0;
