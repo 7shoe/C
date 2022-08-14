@@ -4,17 +4,16 @@
 int isPalindrome(char s[]){
 
     int size = strlen(s) - 1;
-    int end; 
-
+    int end;
+    if(size % 2==0){
+        end = size/2;
+    }else{
+        end=(size+1)/2;
+    }
+    
     printf("size: %d\n\n", size);
 
-    if(size % 2==1){
-        end = (size+1)/2;
-    }else{
-        end = (size+1)/2;
-    }
-
-    for(int i=0; i < end; ++i){
+    for(int i=0; i < size/2; ++i){
         if(s[i] != s[size-i]){
             return 0;
         }
