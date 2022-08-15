@@ -3,9 +3,11 @@
 
 int bits(int i){
     if(i < 256){
-        for(int k=0; k < (int)(log2((double))+1); ++k){
-            printf();
+        printf("\n %d = (");
+        for(int k=0; k < (int)log2((double)); ++k){
+            printf("%d,", (i & ( 1 << k)) >> k);
         }
+        printf(")");
     }
 }
 
@@ -54,6 +56,8 @@ int main(){
     int k = 1;
     printf("a2 ^ b2 = %d", ((c2 & (1 << (k - 1))) >> (k - 1)));
     
+    // print
+    bits(2);
 
 
     // Toogle bits
