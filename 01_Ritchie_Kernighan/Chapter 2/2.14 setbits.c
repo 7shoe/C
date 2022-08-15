@@ -2,13 +2,20 @@
 #include <math.h>
 
 int bits(int i){
+    int end;
+    if((double)((int)log2((double)i)) < log2((double)i)){
+        end = (int)log2((double)i) + 1;
+    }else{
+        end = (int)log2((double)i);
+    }
     if(i < 256){
-        printf("\n %d = (");
-        for(int k=0; k < (int)log2((double)); ++k){
+        printf("\n i = (");
+        for(int k=end-1; k > 0; --k){
             printf("%d,", (i & ( 1 << k)) >> k);
         }
         printf(")");
     }
+    return 0;
 }
 
 /* setbits: */
@@ -57,7 +64,7 @@ int main(){
     printf("a2 ^ b2 = %d", ((c2 & (1 << (k - 1))) >> (k - 1)));
     
     // print
-    bits(2);
+    bits(112);
 
 
     // Toogle bits
