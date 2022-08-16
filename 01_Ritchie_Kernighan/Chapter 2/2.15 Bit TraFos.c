@@ -23,11 +23,11 @@ void printIntNB(int arr[10]){
 
 /* Turn bit representation to integer (bitwise operation) */
 void printInt(int arr[10]){
-    int y = 0;
+    int z = 0;
     for(int k=0; k < 10; ++k){
-        y  = (1 << k) | arr[k];
+        z  |= (arr[10-k-1] << k);
     }
-    printf("y = %d\n", y);
+    printf("z = %d\n", z);
 }
 
 int main(){
