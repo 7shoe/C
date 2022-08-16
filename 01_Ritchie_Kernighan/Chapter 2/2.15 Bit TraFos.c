@@ -13,17 +13,22 @@ void printBits(int x){
 }
 
 /* Turn bit representation to integer */
-void printIntNotBitwise(int arr[10]){
+void printIntNB(int arr[10]){
     int y = 0;
     for(int k=0; k < 10; ++k){
-        y += powl(2, k);
+        y += arr[k] * powl(2, k);
     }
-    printf("y = %d", y);
+    printf("y = %d\n", y);
 }
 
 int main(){
 
+    // Check: int -> bit
     printBits(666);
+
+    // Check: bits -> int 
+    int a[10] = {0,0,0,1,1,1,0,1,0,0};
+    printIntNB(a);
 
 
 
