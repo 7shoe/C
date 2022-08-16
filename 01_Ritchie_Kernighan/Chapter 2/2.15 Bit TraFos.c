@@ -30,6 +30,19 @@ void printInt(int arr[10]){
     printf("z = %d\n", z);
 }
 
+void bitAdder(int x, int y){
+    int z;
+    int log2x = (int)log2((double)x) + 1;
+    if((int)log2((double)y) + 1 > log2x){
+        int log2x = (int)log2((double)y) + 1;
+    }
+    
+
+    for(int k=0; k < log2x())
+
+
+}
+
 int main(){
 
     // Check: int -> bit
