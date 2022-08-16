@@ -42,13 +42,11 @@ void bitAdder(int x, int y){
     z = 0;
     for(int k=0; k < log2x; ++k){
         s |= ((x & (1 << k)) ^ (y & (1 << k))) ^ (z & (1 << (k-1)));
-        z |= ((x & (1 << k)) & (y & (1 << k)));
+        z |= ((((x & (1 << k))) & ((y & (1 << k)))) ^ (((y & (1 << k))) & ((z & (1 << k)))) ^ (((x & (1 << k))) & ((z & (1 << k)))));
     }
 
     // output sum
     printf("%d + %d = %d", x, y, s);
-
-
 }
 
 int main(){
@@ -65,7 +63,7 @@ int main(){
     printInt(a);
 
     // Adder
-    bitAdder(30, 12);
+    bitAdder(17, 30);
 
 
 
