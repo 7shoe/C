@@ -21,6 +21,15 @@ void printIntNB(int arr[10]){
     printf("y = %d\n", y);
 }
 
+/* Turn bit representation to integer (bitwise operation) */
+void printInt(int arr[10]){
+    int y = 0;
+    for(int k=0; k < 10; ++k){
+        y  = (1 << k) | arr[k];
+    }
+    printf("y = %d\n", y);
+}
+
 int main(){
 
     // Check: int -> bit
@@ -29,6 +38,10 @@ int main(){
     // Check: bits -> int 
     int a[10] = {1,0,1,0,0,1,1,0,1,0};
     printIntNB(a);
+
+    // Check: bits -> int 
+    //int a[10] = {1,0,1,0,0,1,1,0,1,0};
+    printInt(a);
 
 
 
