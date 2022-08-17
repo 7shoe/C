@@ -35,10 +35,11 @@ void bitAdder(int x, int y){
     a = x;
     b = y;
 
+    
     while(y!=0){
         c = x & y;
         x = x ^ y;
-        y=c << 1;
+        y=(c << 1);
     }
 
     // output sum
