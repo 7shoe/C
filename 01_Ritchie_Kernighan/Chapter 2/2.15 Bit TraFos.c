@@ -39,6 +39,7 @@ void bitAdder(int x, int y){
     }
 
     // log
+    log2x = (int)log2((double)x) + 1;
     log2y = (int)log2((double)y) + 1;
     z = 0;
 
@@ -49,12 +50,24 @@ void bitAdder(int x, int y){
     printBits(y);
 
     s = 0;
-    for(int k=log2y; k > 0; --k){
-        s |=  (x & (1 << (k+d+1))) ^ (y & (1 << k)) ^ (z & (1 << k));
+    for(int k=log2x; k >= 0; --k){
+        printf("%d, ", (x & (1 << k))); 
+    }
+    printf("\n");
+    for(int k=log2x; k >= 0; --k){
+        if(k <= log2y){
+            printf("%d, ", (y & (1 << k)));
+        }else{
+            printf("%d, ", 0);
+        } 
+    }
+    printf("\n");
+    for(int k=log2x; k >= 0; --k){
+         printf("%d, ", (y & (1 << (k+d-1))));
     }
 
     // output sum
-    printf("%d + %d = %d", x, y, s);
+    //printf("%d + %d = %d", x, y, s);
 }
 
 // 1010111 # 87
