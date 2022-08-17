@@ -31,7 +31,7 @@ void printInt(int arr[10]){
 }
 
 void bitAdder(int x, int y){
-    int s, z;
+    int s, c;
     int log2x = (int)log2((double)x) + 1;
     if((int)log2((double)y) + 1 > log2x){
         int log2x = (int)log2((double)y) + 1;
@@ -39,10 +39,10 @@ void bitAdder(int x, int y){
     
 
     s = 0;
-    z = 0;
+    c = 0;
     for(int k=log2x; k > 0; --k){
-        s |= ((x & (1 << k)) ^ (y & (1 << k))); // ^ (z & (1 << (k+1)));
-        // z |= ((((x & (1 << k))) & ((y & (1 << k)))) ^ (((y & (1 << k))) & ((z & (1 << k)))) ^ (((x & (1 << k))) & ((z & (1 << k)))));
+        s |= ((x & (1 << k)) ^ (y & (1 << k))) ^ (c & (1 << (k+1)));
+        c |= (((x & (1 << k)) & (y & (1 << k))) | ((c & (1 << k)) & (s & (1 << k))) & ((1 << (k+1))));
     }
 
     // output sum
