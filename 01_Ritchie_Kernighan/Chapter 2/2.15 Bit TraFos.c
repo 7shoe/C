@@ -33,21 +33,26 @@ void printInt(int arr[10]){
 void bitAdder(int x, int y){
     int s, c;
     int log2x = (int)log2((double)x) + 1;
-    if((int)log2((double)y) + 1 > log2x){
-        int log2x = (int)log2((double)y) + 1;
+    int log2y = (int)log2((double)y) + 1;
+    if(log2y > log2x){
+        log2x = log2y;
     }
     
 
     s = 0;
     c = 0;
-    for(int k=log2x; k > 0; --k){
-        s |= ((x & (1 << k)) ^ (y & (1 << k))) ^ (c & (1 << (k+1)));
+    for(int k=log2x; k >= 0; --k){
+        s |= ((x & (1 << k)) ^ (y & (1 << k))) ^ (c & (1 << k));
         c |= (((x & (1 << k)) & (y & (1 << k))) | ((c & (1 << k)) & (s & (1 << k))) & ((1 << (k+1))));
     }
+    s |= (c & (1 << (log2x+1)));
 
     // output sum
     printf("%d + %d = %d", x, y, s);
 }
+
+// 1010111 # 87
+
 
 int main(){
 
@@ -63,7 +68,7 @@ int main(){
     printInt(a);
 
     // Adder
-    bitAdder(97, 94);
+    bitAdder(10, 12);
 
 
 
