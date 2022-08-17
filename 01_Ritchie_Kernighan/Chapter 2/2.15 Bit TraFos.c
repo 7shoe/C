@@ -31,21 +31,27 @@ void printInt(int arr[10]){
 }
 
 void bitAdder(int x, int y){
-    int s, c;
-    int log2x = (int)log2((double)x) + 1;
-    int log2y = (int)log2((double)y) + 1;
-    if(log2y > log2x){
-        log2x = log2y;
+    int s, z, d, log2x, log2y;
+    if(y > x){
+        s = y;
+        y = x;
+        x = s;
     }
-    
+
+    // log
+    log2y = (int)log2((double)y) + 1;
+    z = 0;
+
+    printf("log2x=%d\n", log2x);
+    printf("log2y=%d\n", log2y);
+    printf("d=%d\n", d);
+    printBits(x);
+    printBits(y);
 
     s = 0;
-    c = 0;
-    for(int k=log2x; k >= 0; --k){
-        s |= ((x & (1 << k)) ^ (y & (1 << k))) ^ (c & (1 << k));
-        c |= (((x & (1 << k)) & (y & (1 << k))) | ((c & (1 << k)) & (s & (1 << k))) & ((1 << (k+1))));
+    for(int k=log2y; k > 0; --k){
+        s |=  (x & (1 << (k+d+1))) ^ (y & (1 << k)) ^ (z & (1 << k));
     }
-    s |= (c & (1 << (log2x+1)));
 
     // output sum
     printf("%d + %d = %d", x, y, s);
@@ -60,15 +66,15 @@ int main(){
     printBits(666);
 
     // Check: bits -> int 
-    int a[10] = {1,0,1,0,0,1,1,0,1,0};
-    printIntNB(a);
+    //int a[10] = {1,0,1,0,0,1,1,0,1,0};
+    //printIntNB(a);
 
     // Check: bits -> int 
     //int a[10] = {1,0,1,0,0,1,1,0,1,0};
-    printInt(a);
+    //printInt(a);
 
     // Adder
-    bitAdder(10, 12);
+    bitAdder(180, 25);
 
 
 
