@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define BUF_SIZE 18
+#define BUF_SIZE 10
 
 /*  Buffer must have length >= sizeof(int) + 1
     Write to the buffer backwards so that the binary representation
@@ -33,20 +33,19 @@ float aQuarterOf(unsigned int a){
 
 int main(){
 
-    int i = 6;
+    int i = 69;
 
     char buffer[BUF_SIZE];
     buffer[BUF_SIZE - 1] = '\0';
     int2bin(i, buffer, BUF_SIZE - 1);
     printf("a = %s\n", buffer);
 
-    i <<= 6;
-    buffer[BUF_SIZE - 1] = '\0';
-    int2bin(i, buffer, BUF_SIZE - 1);
-    printf("a = %s\n", buffer);
+    //buffer[BUF_SIZE - 1] = '\0';
+    //int2bin(i, buffer, BUF_SIZE - 1);
+    //printf("a = %s\n", buffer);
 
     // square function
-    printf("%d**2 = %d\n", 10, square(10));
+    //printf("%d**2 = %d\n", 10, square(10));
 
     // inverse function
     printf("aQuarterOf(%d) = %.12f\n", 200, aQuarterOf(200));
