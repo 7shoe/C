@@ -4,8 +4,16 @@
 
 int main(){
 
+    int i, limit;
+    limit = 100;
+    for(i=0; i < limit; ++i){
+        if(i==5)
+            limit = 6;            // C-loop allows manipulating the limit of the for loop... NOT the case for Fortran, Python etc.
+    }
+    printf("i=%d\n", i);
 
-    int i = 17;
+
+    i = 17;
 
     switch(2*i){
         case 10: 
