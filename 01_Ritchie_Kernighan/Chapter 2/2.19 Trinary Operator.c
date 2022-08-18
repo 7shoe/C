@@ -6,10 +6,20 @@ int minInt(int i, int j){
     return (i < j) ? i : j;
 }
 
+/* Minimum over an array */
 int min(int arr[]){
     int m = 0;
     for(int i=0; i < SIZE; ++i){
         m = (m < arr[i]) ? m : arr[i];
+    }
+    return m;
+}
+
+/* Maximum over an array */
+int max(int arr[]){
+    int m = 0;
+    for(int i=0; i < SIZE; ++i){
+        m = (m > arr[i]) ? m : arr[i];
     }
     return m;
 }
@@ -28,10 +38,11 @@ int main(){
 
     printf("\n\n");
 
-    int arr[24] = {1, 5, 3, 8, 19, 39. -675, -45, 67, -90, 108, 34, 35, 6, 4, 1, -149, -34, -78, 8, 9, 4, 67, 83, 34};
+    int arr[24] = {1, 5, 3, 8, 19, 39. -675, -45, 67, -90, 108, 34, 35, 6, 4, 1, -149, -34, -78, 8, 9, 4, 67, 8093, 34};
 
 
     printf("min(arr) = %d\n", min(arr));
+    printf("max(arr) = %d\n", max(arr));
 
     return 0;
 }
