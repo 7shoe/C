@@ -31,13 +31,20 @@ int main(){
         }
     }
 
+    double num = 0.0;
     int len, sPoint, sExp, sexp, sMinus;
     len = strlen(str1);
     sPoint = strindex(str1, '.', len);
     sExp = strindex(str1, 'E', len);
     sexp = strindex(str1, 'e', len);
     sExp = (sExp > sexp) ? sExp : sexp;
-    
+
+    if(sPoint != -1){
+        for(int i=; i < sPoint; ++i){
+
+        }
+    }
+
 
     printf("s1: %d", sPoint);
 
