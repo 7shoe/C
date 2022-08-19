@@ -32,7 +32,8 @@ int main(){
     }
 
     double num = 0.0;
-    int len, sPoint, sExp, sexp, sMinus, ten;
+    double ten = 1.0;
+    int len, sPoint, sExp, sexp, sMinus;
     len = strlen(str1);
     sPoint = strindex(str1, '.', len);
     sExp = strindex(str1, 'E', len);
@@ -44,19 +45,20 @@ int main(){
     if(sPoint != -1){
         for(int i=sPoint-1; i >=0; --i){
             num += ten * (int)str1[i];
-            ten *= 10;
+            ten *= 10.0;
         }
     }else{
         for(int i=sExp-1; i >=0; --i){
             num += ten * (int)str1[i];
-            ten *= 10;
+            ten *= 10.0;
         }
     }
     // mantissa (post-decimal)
-    if(sExp > sPoint){
-        for(int i=sPoint-1; i >=0; --i){
+    if((sPoint!=-1) && (sExp > sPoint)){
+        ten = 0.1;
+        for(int i=sExp-1; i > sPoint; --i){
             num += ten * (int)str1[i];
-            ten *= 10;
+            ten /= 10.0;
         }
     }
 
