@@ -14,42 +14,26 @@ int strindex(char s[], char t, int n){
 /* scientific to float*/
 float getScience(char s[]){
 
-
-
-    return 0.0;
-}
-
-int main(){
-
-    char str1[] = "1.23e-6";
-    char str2[] = "1.2E3";
-
-    int mantissa, decimals, exponent;
-    for(int i = 0; i < strlen(str1); ++i){
-        if(str1[i]=='.'){
-            mantissa = i-1;
-        }
-    }
-
+    int len = strlen(s);
     double num = 0.0;
     double ten = 1.0;
-    int len, sPoint, sExp, sexp, sMinus;
-    len = strlen(str1);
-    sPoint = strindex(str1, '.', len);
-    sExp = strindex(str1, 'E', len);
-    sexp = strindex(str1, 'e', len);
+    int sPoint, sExp, sexp, sMinus, EXP;
+    
+    sPoint = strindex(s, '.', len);
+    sExp = strindex(s, 'E', len);
+    sexp = strindex(s, 'e', len);
     sExp = (sExp > sexp) ? sExp : sexp;
     ten = 1;
 
     // mantissa (pre-decimal)
     if(sPoint != -1){
         for(int i=sPoint-1; i >=0; --i){
-            num += ten * (int)str1[i];
+            num += ten * (int)s[i];
             ten *= 10.0;
         }
     }else{
         for(int i=sExp-1; i >=0; --i){
-            num += ten * (int)str1[i];
+            num += ten * (int)s[i];
             ten *= 10.0;
         }
     }
@@ -57,22 +41,37 @@ int main(){
     if((sPoint!=-1) && (sExp > sPoint)){
         ten = 0.1;
         for(int i=sExp-1; i > sPoint; --i){
-            num += ten * (int)str1[i];
+            num += ten * (int)s[i];
             ten /= 10.0;
         }
     }
 
     // exponent
-    if((sMinus==-1) && (len > sExp)){
-        ten = 10.0;
-        for(int i=len-1; i > sExp; --i){
-            num += ten * (int)str1[i];
-            ten /= 10.0;
-        }
+    if((sMinus!=-1) && (sExp!=-1))
+        sExp += 1;
+    ten = 1.0;
+    for(int i=sExp + 1; i < len; ++i){
+        EXP += ten * (double)s[i];
+        ten *= 10.0;
     }
+    if(sMinus==-1)
+        for(int i=0; i < EXP; ++i)
+            num *= 10.0;
+    else
+        for(int i=0; i < EXP; ++i)
+            num /= 10.0;
+
+    return num;
+}
+
+int main(){
+
+    char str1[] = "1.23e-6";
+    char str2[] = "1.2E3";
 
 
-    printf("s1: %d", sPoint);
+
+    printf("s1: %f", getScience(str1));
 
     printf("\nstr1 = %s", str1);
 
