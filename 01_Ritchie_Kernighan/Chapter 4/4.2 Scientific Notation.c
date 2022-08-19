@@ -31,8 +31,13 @@ int main(){
         }
     }
 
-    int l1 = strlen(str1);
-    int sPoint = strindex(str1, '.', l1);
+    int len, sPoint, sExp, sexp, sMinus;
+    len = strlen(str1);
+    sPoint = strindex(str1, '.', len);
+    sExp = strindex(str1, 'E', len);
+    sexp = strindex(str1, 'e', len);
+    sExp = (sExp > sexp) ? sExp : sexp;
+    
 
     printf("s1: %d", sPoint);
 
