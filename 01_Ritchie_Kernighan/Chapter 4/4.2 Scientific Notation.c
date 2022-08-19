@@ -32,16 +32,31 @@ int main(){
     }
 
     double num = 0.0;
-    int len, sPoint, sExp, sexp, sMinus;
+    int len, sPoint, sExp, sexp, sMinus, ten;
     len = strlen(str1);
     sPoint = strindex(str1, '.', len);
     sExp = strindex(str1, 'E', len);
     sexp = strindex(str1, 'e', len);
     sExp = (sExp > sexp) ? sExp : sexp;
+    ten = 1;
 
+    // mantissa (pre-decimal)
     if(sPoint != -1){
-        for(int i=; i < sPoint; ++i){
-
+        for(int i=sPoint-1; i >=0; --i){
+            num += ten * (int)str1[i];
+            ten *= 10;
+        }
+    }else{
+        for(int i=sExp-1; i >=0; --i){
+            num += ten * (int)str1[i];
+            ten *= 10;
+        }
+    }
+    // mantissa (post-decimal)
+    if(sExp > sPoint){
+        for(int i=sPoint-1; i >=0; --i){
+            num += ten * (int)str1[i];
+            ten *= 10;
         }
     }
 
