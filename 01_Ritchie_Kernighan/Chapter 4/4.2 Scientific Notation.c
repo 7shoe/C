@@ -62,6 +62,15 @@ int main(){
         }
     }
 
+    // exponent
+    if((sMinus==-1) && (len > sExp)){
+        ten = 10;
+        for(int i=len-1; i > sExp; --i){
+            num += ten * (int)str1[i];
+            ten /= 10.0;
+        }
+    }
+
 
     printf("s1: %d", sPoint);
 
