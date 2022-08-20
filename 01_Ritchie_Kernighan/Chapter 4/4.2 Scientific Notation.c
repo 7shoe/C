@@ -63,6 +63,7 @@ float getScience(char s[]){
     //printf("%c = %d", '0', (int)'0');
 
     // exponent
+    EXP = 0;
     if((sMinus!=-1) && (sExp!=-1))
         sExp += 2;
     expTen = 1;
