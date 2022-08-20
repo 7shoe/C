@@ -26,6 +26,12 @@ int main(){
     dancer();
     dancer();
     dummy2();
+    dancer();
+    printf("globalCount: %d\n", globalCount);
+    dancer();
+    dummy2();
+    dancer();
+    dummy2();
 
     printf("globalCount: %d\n", globalCount);
 
