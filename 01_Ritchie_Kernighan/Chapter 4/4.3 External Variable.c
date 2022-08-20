@@ -24,8 +24,6 @@ int main(){
 
     dancer();
     dancer();
-    dummy();
-    dummy2();
     dancer();
     dummy2();
 
