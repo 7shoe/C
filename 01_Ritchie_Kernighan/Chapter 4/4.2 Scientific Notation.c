@@ -25,12 +25,6 @@ float getScience(char s[]){
     sExp = strindex(s, 'E', len);
     sexp = strindex(s, 'e', len);
     sExp = (sExp > sexp) ? sExp : sexp;
-    
-
-    //printf("sPoint: %d\n", sPoint);
-    //printf("sExp: %d\n", sExp);
-    //printf("sexp: %d\n", sexp);
-    //printf("len: %d\n", len);
 
     // mantissa (pre-decimal)
     num = 0.0;
@@ -47,8 +41,6 @@ float getScience(char s[]){
             ten *= 10;
         }
     }
-    //printf("num = %f\n", num);
-    //printf("\n\n\n");
 
     // mantissa (post-decimal)
     if((sPoint!=-1) && (sExp > sPoint)){
@@ -58,9 +50,6 @@ float getScience(char s[]){
             ten *= 0.1;
         }
     }
-
-    printf("num = %f\n", num);
-    //printf("%c = %d", '0', (int)'0');
 
     // exponent
     EXP = 0;
