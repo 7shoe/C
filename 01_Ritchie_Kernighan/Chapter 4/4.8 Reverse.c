@@ -3,7 +3,6 @@
 
 
 
-/*  */
 char * reverse(char s[]){
     char p;
     int i, n;
