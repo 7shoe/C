@@ -2,10 +2,9 @@
 #include <string.h>
 
 
-char s[] = "Rentner";
 
 /*  */
-void reverse(){
+char * reverse(char s[]){
     char p;
     int i, n;
 
@@ -22,6 +21,8 @@ void reverse(){
         i++;
         n--;
     }
+
+    return s;
 }
 
 
@@ -32,21 +33,21 @@ int main(){
     char s3[] = "Reittier";
     char s4[] = "livid";
 
-    printf("reverse(%s) = ", s);
-    reverse();
-    printf("%s\n", s);
+    printf("reverse(%s) = ", s1);
+    //reverse(s1);
+    printf("%s\n", reverse(s1));
 
     printf("reverse(%s) = ", s2);
-    reverse();
-    printf("%s\n", s2);
+    //reverse(s2);
+    printf("%s\n", reverse(s2));
 
     printf("reverse(%s) = ", s3);
-    reverse();
-    printf("%s\n", s3);
+    //reverse(s3);
+    printf("%s\n", reverse(s3));
 
     printf("reverse(%s) = ", s4);
-    reverse();
-    printf("%s\n", s4);
+    //reverse(s3);
+    printf("%s\n", reverse(s3));
 
     return 0;
 }
