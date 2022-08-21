@@ -53,14 +53,42 @@ int main(){
     printf("x : %d\n", x);      // x
     printf("y : %d\n\n", y);      // y
 
-    // Experiment 4: Set value of a to b (a:=b) via pointers ontly
+    // Experiment 4: Set value of a to b (a:=b) via pointers only
     int *pt;
     int a = 666, b = 777;
     pt = &b;
-    a = *pt;
-    printf("a = %d", a);
+    // *pt = a;                   // change content of adress of pt to a --> a=666, b=666
+    // a = *pt;                   // change value of a to the value of the content the pointer pt is pointing at --> a=777, b=777
+    printf("a = %d\n", a);
+    printf("b = %d\n\n", b);
 
+    // Experiment 5: Set value of array via pointer
+    int arr[18] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int *pt_arr = &arr[0];   // Int pointer 32 birs (4 bytes) --> pt_arr++ increments memory adress by 4!
 
+    // set values with pointer
+    for(int i = 0; i < 18; ++i){
+        *pt_arr = i+1;
+        pt_arr++;
+    }
+
+    // read out values of array
+    for(int i = 0; i < 18; ++i){
+        printf("%p, arr[%d] : %d\n", &arr[i], i, arr[i]);
+    }
+
+    printf("\n");
+
+    // Experiment 6: swap values of a and b via pointer
+    int c = 0, d = 1, e = -7;
+    int *swap_ptr;
+    swap_ptr = &c;
+    e = *swap_ptr;
+    *swap_ptr = d;
+    d = e;
+
+    printf("c=%d\n", c);
+    printf("d=%d\n", d);
 
 
 
