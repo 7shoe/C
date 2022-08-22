@@ -7,7 +7,7 @@ int stringLength(char s[]){
     int i = 0;
     while(*ps!='\0'){
         i++;
-        ps++;
+        ps++; // increment adress the pointer is pointing at (NOT the content of the cell it's pointing at!)
     }
     return i;
 }
