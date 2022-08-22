@@ -3,12 +3,12 @@
 /* strcopy(s,t) to implement "s=:t" but ... leave s untouched! */
 void strcopy(char *s, char *t){
     char *ps = s, *pt = t;
-    char i = '';
     while(*ps!='\0'){
-        *pt = *(ps+i);
+        *pt = *ps;
         pt++;
-        i++;
+        ps++;
     }
+    //pt++;
     *pt = '\0';
 }
 
@@ -26,7 +26,7 @@ int main(){
     strcopy(s, t);
 
     printf("After:\n"); 
-    printf("s = %s\n", s);
+    printf("s = %s\n", s-5);
     printf("t = %s\n", t);
 
     return 0;
