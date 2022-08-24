@@ -15,18 +15,20 @@ void parseInt(struct treeNode *tree, int x){
     //if(tree==NULL){
     //    struct treeNode currNode = {.number = x, .count = 1};
     while((tree!=NULL) && (tree->number) != x){
-        lastNode = tree->number;
+        lastNode = tree;
         if(x > tree->number)
             tree = tree->left;
         else
             tree = tree->right;
     }
     if(tree==NULL){
-         struct treeNode currNode = {.number = x, .count = 1};   // no match: create new node
-         if(lastNode->number > x)
-            lastNode->left = &currNode;
+        struct treeNode currNode = {.number = x, .count = 1};   // no match: create new node
+        struct treeNode *currPtr = &currNode;
+
+        if(lastNode->number > x)
+            lastNode->left  = currPtr;
         else
-            lastNode->right = &currNode;
+            lastNode->right = currPtr;
     }
     if((tree->number) == x)
         ++tree->count;         // match! increment count of that node's number
@@ -43,13 +45,16 @@ int main(){
     //static int N = sizeof(arr) /sizeof(arr[0]); 
     struct treeNode *tree = NULL;
 
-    
-    printf("tree ptr: %p\n", tree);
-    printf("tree ptr is NULL? %d\n", tree==NULL);
-    printf("n1.left  is NULL? %d\n", n1.left==NULL);
-    printf("n1.right is NULL? %d\n", n1.right==NULL);
+    int x = 7;
+    parseInt(tree, x);
 
-    pritnf();
+    
+    //printf("tree ptr: %p\n", tree);
+    //printf("tree ptr is NULL? %d\n", tree==NULL);
+    //printf("n1.left  is NULL? %d\n", n1.left==NULL);
+    //printf("n1.right is NULL? %d\n", n1.right==NULL);
+
+    //printf();
     
 
 
