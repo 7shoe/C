@@ -7,34 +7,24 @@ struct treeNode {
     struct teeeNode *right;
 };
 
+// typedef struct treeNode node; // typedef for lazy people
+
 /* parseInt: parse integer into the binary tree s */
-void parseInt(struct treeNode *tree, int x){
+void parseInt(struct treeNode **tree, int x){
     // parse through tree. each node: check >=. If 'yes' go to right ptr. Else left ptr.
-    struct treeNode *lastNode;
-
-    //if(tree==NULL){
-    //    struct treeNode currNode = {.number = x, .count = 1};
-    while((tree!=NULL) && (tree->number) != x){
-        lastNode = tree;
-        if(x > tree->number)
-            tree = tree->left;
+    if(!(*tree)){
+        struct treeNode *seedNodePtr, seedNode = {.number = x, .count=1};
+        seedNodePtr = &seedNode;
+        *tree = seedNodePtr;
+    }else{
+        if(x > (*tree)->number)
+            parseInt(&((*tree)->left), x);
+        else if(x < (*tree)->number)
+            parseInt(&((*tree)->right), x);
         else
-            tree = tree->right;
-    }
-    if(tree==NULL){
-        struct treeNode currNode = {.number = x, .count = 1};   // no match: create new node
-        struct treeNode *currPtr = &currNode;
-
-        if(lastNode->number > x)
-            lastNode->left  = currPtr;
-        else
-            lastNode->right = currPtr;
-    }
-    if((tree->number) == x)
-        ++tree->count;         // match! increment count of that node's number
+            (*tree)->count += 1;
+    }       
 }
-
-
 
 int main(){
 
@@ -42,21 +32,15 @@ int main(){
     int arr[] = {10, 7, 6}; //tacitely assumes vallues > 0
 
     // empty tree (list of node pointers)
-    //static int N = sizeof(arr) /sizeof(arr[0]); 
     struct treeNode *tree = NULL;
 
     int x = 7;
-    parseInt(tree, x);
+    int y = 42;
+    parseInt(&tree, x);
+    parseInt(&tree, y);
 
-    
-    //printf("tree ptr: %p\n", tree);
-    //printf("tree ptr is NULL? %d\n", tree==NULL);
-    //printf("n1.left  is NULL? %d\n", n1.left==NULL);
-    //printf("n1.right is NULL? %d\n", n1.right==NULL);
-
-    //printf();
-    
-
+    printf("tree.number : %d\n", tree->number);
+    printf("tree.number : %p\n", tree->right);
 
 
     return 0;
