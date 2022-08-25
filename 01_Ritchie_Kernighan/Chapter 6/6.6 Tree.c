@@ -29,7 +29,7 @@ void parseInt(struct treeNode **tree, int x){
 int main(){
 
     // Task: Given an array arr[], count number of occurences on an integer. Entries are unknown a-priori.
-    int arr[] = {5, 7, 2}; //tacitely assumes vallues > 0
+    int arr[] = {5, 5, 7, 5, 5, 2}; //tacitely assumes vallues > 0
 
     // empty tree (list of node pointers)
     struct treeNode *tree = NULL;
@@ -46,7 +46,7 @@ int main(){
         printf("tree->right is not NULL\n");
 
     printf("tree.left   : %d\n", (*(tree->left)).number);
-    printf("tree.left   : %d\n", (*(tree->right)).number);
+    printf("tree.left   : %d\n", (*(tree->left)).count);
     // printf("tree.right  : %p\n", tree->right);
 
 
