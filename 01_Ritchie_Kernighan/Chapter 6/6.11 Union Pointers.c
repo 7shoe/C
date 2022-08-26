@@ -12,7 +12,7 @@ int main(){
     union student record1;
     union student record2;
 
-    // assigning values to record1 union variable
+    // assigning values to record1 
     strcpy(record1.name, "Raju");
     strcpy(record1.subject, "Maths");
     record1.percentage = 86.50;
@@ -22,7 +22,7 @@ int main(){
     printf(" Subject    : %s \n", record1.subject);
     printf(" Percentage : %f \n\n", record1.percentage);
 
-    // assigning values to record2 union variable
+    // assigning values to record2 
     printf("Union record2 values example\n");
     strcpy(record2.name, "Mani");
     printf(" Name       : %s \n", record2.name);
@@ -33,6 +33,6 @@ int main(){
     record2.percentage = 99.50;
     printf(" Percentage : %f \n", record2.percentage);
 
-    
+
     return 0;
 }
