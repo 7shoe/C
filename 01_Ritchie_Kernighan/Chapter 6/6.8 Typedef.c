@@ -11,7 +11,7 @@ typedef struct tnode {
     int count;
     Treeptr left;     // more readable, then "struct tnode *Treeptr left"
     Treeptr right;
-};
+} tnode;
 
 
 int main(){
