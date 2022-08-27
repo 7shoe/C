@@ -6,16 +6,31 @@
 struct telephone
 {
     char *name;
-    int number;
+    long number;
 };
 
 // typedef
 typedef struct telephone2{
 		char *name;
-		int number;
+		long number;
 }TELEPHONE;
 
+/* Why is there a different tag and typedef for the strcut?
 
+typedef struct {
+    link_t *next;
+    void   *data;
+} link_t;
+
+ANSWER: There is a reason for using a different tag between the typedef and the struct -> 
+        a fields in your struct is a pointer to an instance of the (very same) struct that is being defined; 
+        since the statement isn't complete yet, you can't use the typedef name within the statement!
+
+EXAMPLE
+
+
+
+*/
 int main()
 {
     // (1) struct
