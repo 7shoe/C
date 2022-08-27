@@ -25,9 +25,23 @@ ANSWER: There is a reason for using a different tag between the typedef and the 
         a fields in your struct is a pointer to an instance of the (very same) struct that is being defined; 
         since the statement isn't complete yet, you can't use the typedef name within the statement!
 
-EXAMPLE
+EXAMPLE:
 
+// will NOT work: link_t is unknown when the member pointer link_t *next; is being defined.
+typedef struct {
+    link_t *next;
+    void   *data;
+} link_t;
 
+// WILL WORK
+typedef struct LL {
+    struct LL *next;
+    void      *data;
+} link_t;
+
+WHY DOES IT MATTER?
+Likely, for trees (every struct node points to one or more child  nodes) or linked lists (list element points to neighbors) a member (i.e. an element called "node"/"element")
+points to another element. This association is best represented by a pointer of that type. Difference between struct typedef and struct tag allows this relationship.
 
 */
 int main()
