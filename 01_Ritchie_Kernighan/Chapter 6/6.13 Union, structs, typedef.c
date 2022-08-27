@@ -3,8 +3,7 @@
 #define NUMBER 9179663456
 #define NAME "Jane Doe"
 
-struct telephone
-{
+struct telephone{
     char *name;
     long number;
 };
