@@ -1,19 +1,22 @@
-	#include<stdio.h>
+#include<stdio.h>
 
-	struct telephone
-	{
-		char *name;
-		int number;
-	};
+#define NUMBER 9179663456
+#define NAME "Jane Doe"
 
-	int main()
-	{
-		struct telephone index;
+struct telephone
+{
+    char *name;
+    int number;
+};
 
-		index.name = "Jane Doe";
-		index.number = 12345;
-		printf("Name: %s\n", index.name);
-		printf("Telephone number: %d\n", index.number);
+int main()
+{
+    struct telephone index;
 
-		return 0;
-	}
+    index.name = NAME;
+    index.number = NUMBER;
+    printf("Name: %s\n", index.name);
+    printf("Telephone number: %d\n", index.number);
+
+    return 0;
+}
