@@ -21,7 +21,7 @@ typedef struct {
     void   *data;
 } link_t;
 
-ANSWER: There is a reason for using a different tag between the typedef and the struct -> 
+ANSWER:There is a reason for using a different tag between the typedef and the struct -> 
         a fields in your struct is a pointer to an instance of the (very same) struct that is being defined; 
         since the statement isn't complete yet, you can't use the typedef name within the statement!
 
