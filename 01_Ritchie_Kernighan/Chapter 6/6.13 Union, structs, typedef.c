@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 #define NUMBER 9179663456
-#define NAME "Jane Doe"
+#define NAME "Janmes D\'Ough"
 
 struct telephone{
     char *name;
