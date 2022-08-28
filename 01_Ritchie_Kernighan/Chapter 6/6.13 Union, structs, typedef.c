@@ -25,8 +25,6 @@ ANSWER: There is a reason for using a different tag between the typedef and the 
         a fields in your struct is a pointer to an instance of the (very same) struct that is being defined; 
         since the statement isn't complete yet, you can't use the typedef name within the statement!
 
-EXAMPLE:
-
 // will NOT work: link_t is unknown when the member pointer link_t *next; is being defined.
 typedef struct {
     link_t *next;
