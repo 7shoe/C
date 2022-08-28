@@ -6,12 +6,14 @@
 struct telephone{
     char *name;
     long number;
+    int sign;
 };
 
 // typedef
 typedef struct telephone2{
-		char *name;
+		char *name; // association
 		long number;
+        int sign;
 }TELEPHONE;
 
 /* Why is there a different tag and typedef for the strcut?
