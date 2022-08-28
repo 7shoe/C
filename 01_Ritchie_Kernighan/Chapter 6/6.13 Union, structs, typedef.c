@@ -16,6 +16,7 @@ typedef struct telephone2{
 
 /* Why is there a different tag and typedef for the strcut?
 
+
 typedef struct {
     link_t *next;
     void   *data;
