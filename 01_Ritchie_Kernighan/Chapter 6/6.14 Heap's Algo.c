@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int len;
 void swap (int *x, char *y){
     int temp;
@@ -40,11 +41,15 @@ void heappermute(int v[], int n){
 int main(){
    int num[11];
    int  i;
+
    printf("How many numbers you want to enter: ", len);
    scanf("%d", &len);
    printf("\nEnter %d numbers: ");
+
    for ( i = 0 ; i < len; i++)
        scanf("%d", &num[i]);
+
    heappermute(num, len);
+
    return 0;
 }
