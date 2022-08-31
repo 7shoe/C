@@ -7,3 +7,15 @@ void swap (int *x, char *y){
     *x = *y;
     *y = temp;
 }
+
+void print(const int *v){
+    int i;
+    int size = len;
+    if (v != 0) {
+    for ( i = 0; i < size; i++) {
+        printf("%4d", v[i] );
+    }
+    printf("\n");
+  }
+}
+
