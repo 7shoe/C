@@ -1,7 +1,7 @@
 # C
 The ultimate set of tutorials on C. 
 
-# Book 1: 
+# Book 1: C Programming Language, 2nd Edition (Kernighan, Ritchie)
 
 [![Screen-Shot-2022-08-04-at-1-57-20-AM.jpg](https://i.postimg.cc/jSXkmv19/coding-in-C.jpg)](https://postimg.cc/nMFMBPNt)
 
