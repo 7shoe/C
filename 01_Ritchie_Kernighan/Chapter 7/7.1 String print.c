@@ -12,7 +12,6 @@ int main(){
     printf("%7s.\n", s);
     printf("%.7s.\n", s);
     printf("%-7s.\n", s);
-    printf("%3.7s.\n", s);
 
     // two versions to call printf
     //printf(s); // NOT SAFE (when s has symbol % in it)
