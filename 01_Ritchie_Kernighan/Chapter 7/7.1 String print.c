@@ -18,7 +18,7 @@ int main(){
     //printf(s); // NOT SAFE (when s has symbol % in it)
     printf("%s", s); // safe
 
-    // sprintf
+    // 2 sprintf
     //int i = sprintf("Hello World Number. %d", 4667);
 
     //printf("%d\n", i);
