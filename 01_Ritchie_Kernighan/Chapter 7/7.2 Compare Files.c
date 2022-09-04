@@ -6,15 +6,13 @@ char path1[] = "file1.txt";
 char path2[] = "file2.txt";
 
 
-
-
-
-
 int main(){
 
 
-    FILE * fp1, fp2;
-    char * line1, line2;
+    FILE * fp1;
+    FILE * fp2;
+    char * line1;
+    char * line2;
     line1 = NULL;
     line2 = NULL;
 
@@ -24,11 +22,12 @@ int main(){
     ssize_t read1, read2;
 
     fp1 = fopen("file1.txt", "r");
-    fp1 = fopen("file2.txt", "r");
+    fp2 = fopen("file2.txt", "r");
+
     if((fp1 == NULL) || (fp2 == NULL))
         exit(EXIT_FAILURE);
 
-    while (((read = getline(&line1, &len1, fp1)) != -1) && ((read = getline(&line2, &len2, fp2)) != -1)) {
+    while (((read1 = getline(&line1, &len1, fp1)) != -1) && ((read2 = getline(&line2, &len2, fp2)) != -1)) {
         printf("Retrieved line of length %zu:\n", read1);
         printf("%s", line1);
     }
