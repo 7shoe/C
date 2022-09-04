@@ -24,8 +24,11 @@ int main(){
     fp1 = fopen("file1.txt", "r");
     fp2 = fopen("file2.txt", "r");
 
-    if((fp1 == NULL) || (fp2 == NULL))
+    if((fp1 == NULL) && (fp2 == NULL)){
+        printf("One is NULL!\n");
         exit(EXIT_FAILURE);
+    }
+       
 
     while (((read1 = getline(&line1, &len1, fp1)) != -1) && ((read2 = getline(&line2, &len2, fp2)) != -1)) {
         printf("Retrieved line of length %zu:\n", read1);
