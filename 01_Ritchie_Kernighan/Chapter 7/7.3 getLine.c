@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 int main(){
+
+    char path[] = "file1.txt";
 
     char *buffer;
     size_t bufsize = 32;
@@ -19,7 +19,6 @@ int main(){
     characters = getline(&buffer,&bufsize,stdin);
     printf("%zu characters were read.\n",characters);
     printf("You typed: '%s'\n",buffer);
-
 
 
     return 0;
