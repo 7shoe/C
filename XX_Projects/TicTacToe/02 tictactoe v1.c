@@ -1,12 +1,20 @@
 #include <stdio.h>
 
 
+/* print the table with the current 'X', 'O' locations */
+void printTable(){
+    ;
+}
+
+/* initialize table with all '-' entrie */
+
 
 
 
 
 int main(){
 
+    
     /* 
     Tic Tac Toe
      - 3x3 table, each state has state 'X', 'O', or '-'
