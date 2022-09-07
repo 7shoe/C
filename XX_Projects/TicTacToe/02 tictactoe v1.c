@@ -1,22 +1,20 @@
 #include <stdio.h>
+#include <assert.h>
 #include <string.h> 
 
 /* print the table with the current 'X', 'O' locations */
 void printTable(char * table){
     char out[1024];
     char tmp[100];
-    char startLine[1024] = "\n| - - - - | - - - - | - - - - |\n";
-    char endLine[36] = "|\n| - - - - | - - - - | - - - - |\n";
 
-    //printf("%s\n", out);
-    strcat(out, startLine);
+    strcat(out, "\n| - - - - | - - - - | - - - - |\n");
     for(int i=0; i < 9; ++i){
         sprintf(tmp, "|    %c    ", table[i]);
         strcat(out, tmp);
         memset(tmp, 0, sizeof(tmp));
         // new line
         if(i%3==2){
-            strcat(out, endLine);     
+            strcat(out, "|\n| - - - - | - - - - | - - - - |\n");     
         }
     }
     printf("%s", out); 
@@ -29,6 +27,13 @@ char * initTable(){
     return tab;
 } 
 
+/* set i-th entry in table */
+void setEntry(char symbol, int index, char * table){
+    assert((symbol=='X') || (symbol=='O'));
+    assert((index < 9) || (index >= 0));
+    if((table[index]=='X') || (table[index]=='O'))
+        table[index] = symbol;
+}
 
 
 
