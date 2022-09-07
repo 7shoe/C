@@ -90,7 +90,7 @@ int main(){
     */
 
     int round, index, check, rndIndex, winner;
-    
+    char winningSymbol = '-';
     round = 0;
     check = -1;
     winner = -1;
@@ -99,15 +99,19 @@ int main(){
     printTable(t);
 
     // Game Flow
-    while((winner == -1) && (round < 4)){
+    while((winner == -1) && (round < 5)){
         // player's move
         check = -1;
         while(check != 0){
             index = readIndex("Choose cell element: "); // user choice
             check = setEntry('X', index, t);
         }
-        
 
+        // check winner
+        winner = checkForWinner(t);
+        if(winner==0)
+            winningSymbol = 'X';
+        
         // opponent's (random) move
         check = -1;
         while(check != 0){
@@ -115,21 +119,22 @@ int main(){
             check = setEntry('O', rndIndex, t);
         }
         
-
         // print table
         printTable(t);
 
         // check winner
         winner = checkForWinner(t);
-
-        // debug
-        //printf("Winner? : %d", winner);
+        if((winner==0) && (winningSymbol=='-'))
+            winningSymbol = 'O';
 
         // round count up
         round++;
     }
 
-    printf("We have a Winner!\n");
+    if((round >= 5) && (winner!=0))
+        printf("Game Over. No winnner\n");
+    else
+        printf("We have a Winner!\nWINNING SYMBOL: %c\n", winningSymbol);
 
     return 0;
 }
