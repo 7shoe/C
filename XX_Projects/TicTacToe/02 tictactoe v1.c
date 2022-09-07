@@ -4,7 +4,6 @@
 #include <string.h> 
 
 char tab[10];
-int round=0;
 
 /* print the table with the current 'X', 'O' locations */
 void printTable(char * table){
@@ -49,19 +48,19 @@ int checkForWinner(char * table){
     // All possibilities of a match: 0,1,2;  3,4,5;  6,7,8;  0,3,6;  1,4,7;  2,5,8;  0,4,8;  2,4,6
     // check horizontal
     for(int i=0; i < 9; i+=3){
-        if((table[i]!= '-') && (table[i]==table[i+1]) && (table[i+1]==table[i+2]))
+        if((table[i]==table[i+1]) && (table[i+1]==table[i+2]))
             return 0;
     }
     // check vertical
     for(int i=0; i < 2; ++i){
-        if(((table[i]!= '-') && table[i]==table[i+3]) && (table[i+3]==table[i+6]))
+        if(( table[i]==table[i+3]) && (table[i+3]==table[i+6]))
             return 0;
     }
     // check diagonal
-    if((table[0]!= '-') && (table[0]==table[4]) && (table[4]==table[8]))
+    if((table[0]==table[4]) && (table[4]==table[8]))
         return 0;
     // check anti-diagonal
-    if((table[2]!= '-') && (table[2]==table[4]) && (table[4]==table[6]))
+    if((table[2]==table[4]) && (table[4]==table[6]))
         return 0;
     
     return -1;
@@ -81,7 +80,7 @@ int readIndex(char *prompt){
 
 
 
-int main(argc, char* argv[]){
+int main(){
 
     /* 
     Tic Tac Toe
@@ -109,26 +108,20 @@ int main(argc, char* argv[]){
 
         // opponent's (random) move
         while(check == -1){
-            rndIndex = (rand() % (upper - lower + 1)) + lower; // random choice
-            check = setEntry('O', index, t);
+            rndIndex = (rand() % 10); // random choice
+            check = setEntry('O', rndIndex, t);
         }
+        check = -1;
 
+        // print table
+        printTable(t);
 
         // check winner
-
+        checkForWinner(t);
 
         // round count up
         round++;
     }
-
-    printTable(t);
-
-    setEntry('X', 2, t);
-
-    //printTable(t);
-    //setEntry('O', 0, t);
-    printf("X as int: %d\n", 'X' - '0');
-    printf("O as int: %d\n", 'O' - '0');
 
     return 0;
 }
