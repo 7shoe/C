@@ -3,19 +3,28 @@
 
 /* print the table with the current 'X', 'O' locations */
 void printTable(char * table){
-    char field[300] = '\n- - - - - - - - - - - - - - -\n';
+    char out[1024];
+    char tmp[100];
+    char startLine[1024] = "\n| - - - - | - - - - | - - - - |\n";
+    char endLine[36] = "|\n| - - - - | - - - - | - - - - |\n";
+
+    //printf("%s\n", out);
+    strcat(out, startLine);
     for(int i=0; i < 9; ++i){
-        sprintf(field, "|  %c  ", table[i]);
-        if(i%3==0)
-            strcat(field, "|\n- - - - - - - - - - - - - - -\n");
+        sprintf(tmp, "|    %c    ", table[i]);
+        strcat(out, tmp);
+        memset(tmp, 0, sizeof(tmp));
+        // new line
+        if(i%3==2){
+            strcat(out, endLine);     
+        }
     }
-    printf("%s\n", lines);
-        printf("%c", table[i]); //  = '-'
+    printf("%s", out); 
 }
 
 /* initialize table with all '-' entrie */
 char * initTable(){
-    static char tab[] = "---------";
+    static char tab[] = "123456789";
 
     return tab;
 } 
@@ -35,9 +44,6 @@ int main(){
 
     char * t = initTable();
 
-    printTable(t);
-
-    t[4] = 'X';
     printTable(t);
 
     return 0;
