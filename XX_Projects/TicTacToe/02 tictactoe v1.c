@@ -41,7 +41,7 @@ void setEntry(char symbol, int index, char * table){
 
 /* check for winner */
 int checkForWinner(char * table){
-    // 0,1,2;  3,4,5;  6,7,8;  0,3,6;  1,4,7;  2,5,8;  0,4,8;  2,4,6
+    // All possibilities of a match: 0,1,2;  3,4,5;  6,7,8;  0,3,6;  1,4,7;  2,5,8;  0,4,8;  2,4,6
     // check horizontal
     for(int i=0; i < 9; i+=3){
         if((table[i]!= '-') && (table[i]==table[i+1]) && (table[i+1]==table[i+2]))
@@ -61,6 +61,10 @@ int checkForWinner(char * table){
     
     return -1;
 }
+/* check if game is over */
+
+
+/* read integer for targeted entry move */ 
 
 
 
@@ -85,9 +89,7 @@ int main(){
     setEntry('X', 2, t);
 
     //printTable(t);
-
     //setEntry('O', 0, t);
-
     printf("X as int: %d\n", 'X' - '0');
     printf("O as int: %d\n", 'O' - '0');
 
