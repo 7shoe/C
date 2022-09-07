@@ -2,6 +2,8 @@
     "files.associations": {
         "random": "c",
         "__locale": "c",
-        "locale": "c"
+        "locale": "c",
+        "chrono": "c",
+        "variant": "c"
     }
 }

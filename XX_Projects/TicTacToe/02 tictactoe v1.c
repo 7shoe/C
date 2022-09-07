@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 #include <string.h> 
 
 char tab[10];
+int round=0;
 
 /* print the table with the current 'X', 'O' locations */
 void printTable(char * table){
@@ -32,11 +34,14 @@ char * initTable(){
 } 
 
 /* set i-th entry in table */
-void setEntry(char symbol, int index, char * table){
+int setEntry(char symbol, int index, char * table){
     assert((symbol=='X') || (symbol=='O'));
     assert((index < 9) || (index >= 0));
-    if((table[index]!='X') && (table[index]!='O'))
+    if((table[index]!='X') && (table[index]!='O')){
         table[index] = symbol;
+        return 0;
+    }
+    return -1;
 }
 
 /* check for winner */
@@ -61,15 +66,22 @@ int checkForWinner(char * table){
     
     return -1;
 }
-/* check if game is over */
+
+/* read integer for targeted entry move */
+int readIndex(char *prompt){   
+    int a, s;   // leave it to scanf to check the input:
+    while (printf("%s", prompt), fflush(stdout), s = scanf("%d", &a), !s){
+        printf("INPUT ERROR!\n");
+        do s = getchar(); while (s != '\n' && s != EOF);    // consume bad input
+    }
+    if (s == EOF) puts(""), exit(0);    // no more input
+    
+    return a;
+}
 
 
-/* read integer for targeted entry move */ 
 
-
-
-int main(){
-
+int main(argc, char* argv[]){
 
     /* 
     Tic Tac Toe
@@ -78,10 +90,35 @@ int main(){
      - opponent ('O') chooses of one remaining '-' 
     */
 
+    int round, index, check, rndIndex;
+    
+    round = 0;
+    check = -1;
+
     char * t = initTable();
+    printTable(t);
 
-    while(checkForWinner(t) == -1){
+    // Game Flow
+    while((checkForWinner(t) == -1) || (round < 9)){
+        // player's move
+        while(check == -1){
+            index = readIndex("Choose cell element: "); // user choice
+            check = setEntry('X', index, t);
+        }
+        check = -1;
 
+        // opponent's (random) move
+        while(check == -1){
+            rndIndex = (rand() % (upper - lower + 1)) + lower; // random choice
+            check = setEntry('O', index, t);
+        }
+
+
+        // check winner
+
+
+        // round count up
+        round++;
     }
 
     printTable(t);
