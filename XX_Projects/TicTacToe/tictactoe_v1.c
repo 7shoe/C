@@ -53,7 +53,7 @@ int checkForWinner(char * table){
     }
     // check vertical
     for(int i=0; i < 2; ++i){
-        if(( table[i]==table[i+3]) && (table[i+3]==table[i+6]))
+        if((table[i]==table[i+3]) && (table[i+3]==table[i+6]))
             return 0;
     }
     // check diagonal
@@ -75,7 +75,7 @@ int readIndex(char *prompt){
     }
     if (s == EOF) puts(""), exit(0);    // no more input
     
-    return a;
+    return a - 1;
 }
 
 
@@ -89,39 +89,47 @@ int main(){
      - opponent ('O') chooses of one remaining '-' 
     */
 
-    int round, index, check, rndIndex;
+    int round, index, check, rndIndex, winner;
     
     round = 0;
     check = -1;
+    winner = -1;
 
     char * t = initTable();
     printTable(t);
 
     // Game Flow
-    while((checkForWinner(t) == -1) || (round < 9)){
+    while((winner == -1) && (round < 4)){
         // player's move
-        while(check == -1){
+        check = -1;
+        while(check != 0){
             index = readIndex("Choose cell element: "); // user choice
             check = setEntry('X', index, t);
         }
-        check = -1;
+        
 
         // opponent's (random) move
-        while(check == -1){
-            rndIndex = (rand() % 10); // random choice
+        check = -1;
+        while(check != 0){
+            rndIndex = (int)(rand() % 10); // random choice
             check = setEntry('O', rndIndex, t);
         }
-        check = -1;
+        
 
         // print table
         printTable(t);
 
         // check winner
-        checkForWinner(t);
+        winner = checkForWinner(t);
+
+        // debug
+        //printf("Winner? : %d", winner);
 
         // round count up
         round++;
     }
+
+    printf("We have a Winner!\n");
 
     return 0;
 }
