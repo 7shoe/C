@@ -5,11 +5,12 @@
 int main(){
 
     // sprintf
-    char name[] = "Alfred Pennyworth";
+    char name[100];
     char position[] = ", Buttler";
     int alfred_age = 66;
+    int salary = 5000;
 
-    sprintf(name, ", Age: %d", alfred_age);
+    sprintf(name, ", Age: %d, Salary: %d", alfred_age, salary);
 
     printf("Info: \n", name);
 
