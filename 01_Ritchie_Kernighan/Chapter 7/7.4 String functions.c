@@ -33,8 +33,12 @@ int main(){
 
     strcat(part1, part2); // strcat in action
 
+    printf("stract: %s\n", part1);
     printf("stract: %s\n\n", part1);
-    printf("stract: %s\n\n", part1);
+
+    // memset
+    memset(part1, '$', 7);
+    printf("stract: %s\n", part1);
 
     return 0;
 }
