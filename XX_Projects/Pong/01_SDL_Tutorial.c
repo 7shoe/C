@@ -1,5 +1,7 @@
-#include <SDL2/SDL.h>
+#include <stdio.h>
 #include <stdbool.h>
+
+#include <SDL2/SDL.h>
 
 #define SCREEN_WIDTH   500
 #define SCREEN_HEIGHT   200
@@ -12,6 +14,7 @@ SDL_Surface* gScreenSurface = NULL;
 
 //The image we will load and show on the screen
 SDL_Surface* gHelloWorld = NULL;
+
 
 bool init(){
     //Initialization flag
