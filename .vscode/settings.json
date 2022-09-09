@@ -6,7 +6,8 @@
     "chrono": "c",
     "variant": "c",
     "ios": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "sdl.h": "c"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -24,7 +25,7 @@
   "C_Cpp_Runner.warningsAsError": false,
   "C_Cpp_Runner.compilerArgs": [],
   "C_Cpp_Runner.linkerArgs": [],
-  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.includePaths": ["/Library/Frameworks/SDL2.framework/SDL2"],
   "C_Cpp_Runner.includeSearch": [
     "*",
     "**/*"
