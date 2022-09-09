@@ -1,8 +1,8 @@
-#include <iostream>
 #include <SDL2/SDL.h>
-using namespace std;
+#include <stdio.h>
+
 int main() {
-        cout << "Hello World!";
+        printf("Hello World! Reeeally");
         SDL_Init(SDL_INIT_VIDEO);
         return 0;
     }

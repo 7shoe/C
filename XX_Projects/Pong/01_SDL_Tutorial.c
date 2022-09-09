@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "/Library/Frameworks/SDL2.framework/Headers/SDL.h"
-
 #define SCREEN_WIDTH   500
-#define SCREEN_HEIGHT   200
+#define SCREEN_HEIGHT  200
 
 #include <SDL2/SDL.h>
 
@@ -51,10 +49,28 @@ bool init(){
     return success;
 }
 
-int main(){
+int main(int argc, char* args[]){
+    //Start up SDL and create window
+    if(!init()){
+        printf( "Failed to initialize!\n" );
+    }else{
+        //Load media
+        if(!loadMedia()){
+            printf( "Failed to load media!\n" );
+        }else{
+            //Apply the image
+            SDL_BlitSurface(gHelloWorld, NULL, gScreenSurface, NULL);
 
-    printf("Hello World!");
+            //Update the surface
+            SDL_UpdateWindowSurface(gWindow);
 
+            //Wait two seconds
+            SDL_Delay(2000);
+        }
+    }
 
+    //Free resources and close SDL
+    close();
 
+    return 0;
 }
