@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-#define WIDTH 640 
-#define HEIGHT 360
+#define WIDTH 540 
+#define HEIGHT 900
 
 int main(){
     
@@ -18,7 +18,7 @@ int main(){
                             SDL_WINDOW_ALLOW_HIGHDPI);
     
     if (NULL == window){
-        std::cout << "Could not create SDL2 window!" << std::endl;
+        std::cout << "Aww, thanks guys :)" << std::endl;
         return EXIT_FAILURE;
     }
 

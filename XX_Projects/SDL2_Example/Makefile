@@ -4,7 +4,7 @@ CC = g++
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_NAME = play
 INCLUDE_PATHS = -Iinclude
-LIBRARY_PATHS = -Llib
+LIBRARY_PATHS = -L/usr/local/Cellar/sdl2/2.24.0/lib/ -L/usr/local/Cellar/sdl2_image/2.6.2/lib
 COMPILER_FLAGS = -std=c++11 -Wall -O0 -g
 LINKER_FLAGS = -lsdl2
 
