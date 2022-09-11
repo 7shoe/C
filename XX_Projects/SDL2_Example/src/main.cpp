@@ -1,8 +1,8 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-#define WIDTH 540 
-#define HEIGHT 900
+#define WIDTH 500 
+#define HEIGHT 392
 
 int main(){
     
