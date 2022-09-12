@@ -3,6 +3,9 @@
 #include <SDL2/SDL.h>
 #include <SDL_image.h>
 
+#define WIDTH 640
+#define HEIGHT 480
+
 SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
     SDL_Texture *texture = NULL;
     SDL_Surface *surface = IMG_Load(filePath);
@@ -35,45 +38,35 @@ int main(){
 
     int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
 
-    if (NULL == window){
-        printf("Aww, thanks guys :)");
-        return EXIT_FAILURE;
+    if (!(IMG_Init(imgFlags) & imgFlags)){
+        printf("SDL_Init failed with error: %s", SDL_GetError());
     }
 
-    SDL_Event windowEvent;
+    window = SDL_CreateWindow("SDL Window created!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
+    renderTarget = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    currentImage = IMG_LoadTexture("./data/sample.png", renderTarget);
 
-    // Create load bitmap (bmp) to surface -> surface to texture -> texture to renderer (graphics card)
-    SDL_Renderer * renderer = SDL_CreateRenderer(window, -1, 0);
+    bool isRunning = true;
+    SDL_Event event;
 
-    SDL_Surface * image = SDL_LoadBMP("./data/hello_C.bmp");
-
-    SDL_Texture * texture = SDL_CreateTextureFromSurface(renderer, image);
-
-    while (!quit){
-        SDL_WaitEvent(&windowEvent);
- 
-        switch (windowEvent.type){
-            case SDL_QUIT:
-                quit = true;
-                break;
+    while(isRunning){
+        while(SDL_PollEvent(&event) != 0){
+            // getting the event
+            if(event.type == SDL_QUIT)
+                isRunning = false;
         }
-
-        SDL_RenderCopy(renderer, texture, NULL, NULL);   // image -> device mem
-        SDL_RenderPresent(renderer);
-
     }
+
+    SDL_RenderClear(renderTarget);
+    SDL_RenderCopy(renderTarget, currentImage, NULL, NULL);
+    SDL_RenderPresent(renderTarget);
 
     // clean-up
     SDL_DestroyWindow(window);
-    SDL_DestroyTexture(texture);
-    SDL_FreeSurface(image);
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
+    SDL_DestroyTexture(currentImage);
+    SDL_DestroyRenderer(renderTarget);
 
     SDL_Quit();
-
-    char greetings[] = "Hello SDL2 in pure C!";
-    printf("%s", greetings);
 
     return 0;
 
