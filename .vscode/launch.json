@@ -92,6 +92,19 @@
             "preLaunchTask": "build_C"
         },
         {
+            "name": "Debug_Pong",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/XX_Projects/Pong/build/debug/play",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/XX_Projects/Pong/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "build_pong"
+        },
+        {
             "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",

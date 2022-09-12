@@ -120,6 +120,23 @@
         },
         {
             "type": "cppbuild",
+            "label": "build_pong",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/XX_Projects/Pong/"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build the Pong implementation from C coe via the existing Makefile."
+        },
+        {
+            "type": "cppbuild",
             "label": "C/C++: g++ build active file",
             "command": "/usr/bin/g++",
             "args": [
