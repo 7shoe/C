@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-#include <SDL_image.h>
+// #include <SDL_image.h>
 
 #define WIDTH 640
 #define HEIGHT 480
@@ -26,9 +26,9 @@ SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
 int main(){
     
     // initialize variables
-    SDL_Window * window = NULL;
-    SDL_Texture * currentImage = NULL;
-    SDL_Renderer * renderTarget = NULL;
+    SDL_Window * window;
+    SDL_Texture * currentImage;
+    SDL_Renderer * renderTarget;
     SDL_Rect playerRect;
 
     int frameWidth, frameHeight;
@@ -44,7 +44,7 @@ int main(){
 
     window = SDL_CreateWindow("SDL Window created!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
     renderTarget = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    currentImage = IMG_LoadTexture("./data/sample.png", renderTarget);
+    currentImage = IMG_LoadTexture("./data/sample_pong.bmp", renderTarget);
 
     bool isRunning = true;
     SDL_Event event;
