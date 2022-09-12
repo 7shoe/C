@@ -90,7 +90,7 @@
             "command": "make",
             "args": [],
             "options": {
-                "cwd": "${workspaceFolder}/XX_Projects/SDL2_Example/"
+                "cwd": "${workspaceFolder}/XX_Projects/SDL2_Example_Cpp/"
             },
             "problemMatcher": [
                 "$gcc"
@@ -100,6 +100,23 @@
                 "isDefault": true
             },
             "detail": "Builds our program the existing Makefile."
+        },
+        {
+            "type": "cppbuild",
+            "label": "build_C",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "${workspaceFolder}/XX_Projects/SDL2_Example_C/"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds our C program the existing Makefile."
         },
         {
             "type": "cppbuild",
