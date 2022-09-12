@@ -1,23 +1,40 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
+#include <SDL_image.h>
 
-#define WIDTH 500 
-#define HEIGHT 392
+SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
+    SDL_Texture *texture = NULL;
+    SDL_Surface *surface = IMG_Load(filePath);
 
-int main(void){
-    
-    if(SDL_Init(SDL_INIT_EVERYTHING) > 0){
+    if(surface == NULL){
         printf("SDL_Init failed with error: %s", SDL_GetError());
-        return EXIT_FAILURE;
+    }else{
+        texture = SDL_CreateTextureFromSurface(renderTarget, surface);
+        if(texture == NULL)
+            printf("SDL_Init failed with error: %s", SDL_GetError());
     }
-    
-    bool quit = false;
 
-    SDL_Window *window = SDL_CreateWindow("Hello SDL 2 World in C!", 
-                            SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT,
-                            SDL_WINDOW_ALLOW_HIGHDPI);
+    SDL_FreeSurface(surface);
+
+    return texture;
+}
+
+int main(){
     
+    // initialize variables
+    SDL_Window * window = NULL;
+    SDL_Texture * currentImage = NULL;
+    SDL_Renderer * renderTarget = NULL;
+    SDL_Rect playerRect;
+
+    int frameWidth, frameHeight;
+    int textureWidth, textureHeight;
+
+    SDL_Init(SDL_INIT_VIDEO);
+
+    int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
+
     if (NULL == window){
         printf("Aww, thanks guys :)");
         return EXIT_FAILURE;
@@ -58,6 +75,6 @@ int main(void){
     char greetings[] = "Hello SDL2 in pure C!";
     printf("%s", greetings);
 
-    return EXIT_SUCCESS;
+    return 0;
 
 }
