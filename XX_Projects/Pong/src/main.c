@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-// #include <SDL_image.h>
+#include <SDL_image.h>
+#include <SDL2/SDL_image.h>
 
 #define WIDTH 640
 #define HEIGHT 480
