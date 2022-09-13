@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h>
-//#include <SDL_image.h>
+#include <SDL_image.h>
 
 #define WIDTH 640
 #define HEIGHT 480
 
 SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
     SDL_Texture *texture = NULL;
-    //SDL_Surface *surface = IMG_Load(filePath);
+    SDL_Surface *surface = IMG_Load(filePath);
 
     if(surface == NULL){
         printf("SDL_Init failed with error: %s", SDL_GetError());
