@@ -3,11 +3,11 @@
 #include <SDL2/SDL.h> // Import issue persists with SDL_image
 // #include <SDL_image.h>
 
-#define WIDTH 820
+#define WIDTH  620
 #define HEIGHT 480
 
 SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
-    SDL_Texture *texture = NULL;
+    SDL_Texture *texture;
     SDL_Surface *surface = IMG_Load(filePath);
 
     if(surface == NULL){
