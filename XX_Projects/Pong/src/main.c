@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <SDL2/SDL.h> // Import issue persists with SDL_image
-#include <SDL_image.h>
+// #include <SDL_image.h>
 
 #define WIDTH 820
 #define HEIGHT 480
