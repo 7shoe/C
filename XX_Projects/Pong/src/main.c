@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <SDL2/SDL.h>
+#include <SDL2/SDL.h> // Import issue persists with SDL_image
 #include <SDL_image.h>
 
-#define WIDTH 640
+#define WIDTH 820
 #define HEIGHT 480
 
 SDL_Texture *LoadTexture(char * filePath, SDL_Renderer *renderTarget){
