@@ -4,7 +4,7 @@ CC = clang
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
 OBJ_NAME = play
 INCLUDE_PATHS = -Iinclude
-LIBRARY_PATHS = -Llib/SDL2_image
+LIBRARY_PATHS = -Llib
 COMPILER_FLAGS = -std=c99 -Wall -O0 -g
 LINKER_FLAGS = -lsdl2
 
