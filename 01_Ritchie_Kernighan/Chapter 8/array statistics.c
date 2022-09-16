@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <math.h>
+
+float scale(float data[]); 
 
 int main(){
    int n, i;
@@ -10,4 +13,18 @@ int main(){
    }
    int armean=sum/n;
    printf("Arithmetic Mean = %.2f");
+}
+
+
+float scale(float data[]){
+    float sum = 0.0, mean, SD = 0.0;
+    int i;
+    for (i = 0; i < 10; ++i) {
+        sum += data[i];
+    }
+    mean = sum / 10;
+    for (i = 0; i < 10; ++i) {
+        SD += pow(data[i] - mean, 2);
+    }
+    return sqrt(SD / 10);
 }
