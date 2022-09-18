@@ -6,8 +6,7 @@ void swap(int* xp, int* yp){
 	*yp = temp;
 }
 
-void selectionSort(int arr[], int n)
-{
+void selectionSort(int arr[], int n){
 	int i, j, min_idx;
 
 	// One by one move boundary of unsorted subarray
@@ -25,12 +24,22 @@ void selectionSort(int arr[], int n)
 	}
 }
 
-void printArray(int arr[], int size)
-{
+void printArray(int arr[], int size){
 	int i;
 	for (i = 0; i < size; i++)
 		printf("%d ", arr[i]);
 	printf("\n");
 }
 
+int main(){
+	int arr[] = { 0, 23, 14, 12, 9 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	printf("Original array: \n");
+	printArray(arr, n);
 
+	selectionSort(arr, n);
+	printf("\nSorted array in Ascending order: \n");
+	printArray(arr, n);
+
+	return 0;
+}
