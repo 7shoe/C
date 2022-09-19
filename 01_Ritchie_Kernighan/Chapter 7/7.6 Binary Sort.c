@@ -14,3 +14,39 @@ int binarySearch(int a[], int item, int low, int high)
 		return binarySearch(a, item, mid+1, high);
 	return binarySearch(a, item, low, mid-1);
 }
+
+// Function to sort an array a[] of size \'n\'
+void insertionSort(int a[], int n)
+{
+	int i, loc, j, selected;
+
+	for (i = 1; i < n; ++i)
+	{
+		j = i - 1;
+		selected = a[i];
+
+		// find location where selected should be inserted
+		loc = binarySearch(a, selected, 0, j);
+
+		// Move all elements after location to create space
+		while (j >= loc)
+		{
+			a[j+1] = a[j];
+			j--;
+		}
+		a[j+1] = selected;
+	}
+}
+
+int main(){
+	int a[] = {37, 23, 0, 17, 12, 72, 31, 46, 100, 88, 54, 118, 111};
+	int n = sizeof(a) / sizeof(a[0]), i;
+
+	insertionSort(a, n);
+
+	printf("Sorted array: \n");
+	for (i = 0; i < n; i++)
+		printf("%d ",a[i]);
+
+	return 0;
+}
