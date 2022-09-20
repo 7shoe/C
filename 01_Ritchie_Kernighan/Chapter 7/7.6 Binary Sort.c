@@ -29,7 +29,7 @@ void insertionSort(int a[], int n){
 		while (j >= loc)
 		{
 			a[j+1] = a[j];
-			j--;
+			j-=1;
 		}
 		a[j+1] = selected;
 	}
