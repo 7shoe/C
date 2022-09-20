@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-int binarySearch(int a[], int item, int low, int high)
-{
+int binarySearch(int a[], int item, int low, int high){
 	if (high <= low)
 		return (item > a[low])? (low + 1): low;
 
@@ -15,9 +14,7 @@ int binarySearch(int a[], int item, int low, int high)
 	return binarySearch(a, item, low, mid-1);
 }
 
-// Function to sort an array a[] of size \'n\'
-void insertionSort(int a[], int n)
-{
+void insertionSort(int a[], int n){
 	int i, loc, j, selected;
 
 	for (i = 1; i < n; ++i)
@@ -39,6 +36,7 @@ void insertionSort(int a[], int n)
 }
 
 int main(){
+
 	int a[] = {37, 23, 0, 17, 12, 72, 31, 46, 100, 88, 54, 118, 111};
 	int n = sizeof(a) / sizeof(a[0]), i;
 
