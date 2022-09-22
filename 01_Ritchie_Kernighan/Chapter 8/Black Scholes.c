@@ -79,7 +79,7 @@ double putValue(double strike, double s, double sd, double r, double days){
 }
 
 int main(int argc, char *argv[]){
-     double strike_price = atof(argv[1]);
+     double strike_price = atof(argv[0]);
      double asset_price = atof(argv[2]);
      double standard_deviation = atof(argv[3]);
      double risk_free_rate = atof(argv[4]);
