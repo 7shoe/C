@@ -79,6 +79,19 @@ double putValue(double strike, double s, double sd, double r, double days){
 }
 
 int main(int argc, char *argv[]){
+     double strike_price = atof(argv[1]);
+     double asset_price = atof(argv[2]);
+     double standard_deviation = atof(argv[3]);
+     double risk_free_rate = atof(argv[4]);
+     double days_to_exp = atof(argv[5]);
+
+     printf("Strike Price: %f \n", strike_price);
+     printf("Asset Price:  %f \n", asset_price);
+     printf("Std Dev:      %f \n", standard_deviation);
+     printf("Risk Free:    %f \n", risk_free_rate);
+     printf("Days to Exp:  %f \n", days_to_exp);
+     printf("Put Value:    %f \n", putValue(strike_price, asset_price, standard_deviation, risk_free_rate, days_to_exp));
+     printf("Call Value:   %f \n", callValue(strike_price, asset_price, standard_deviation, risk_free_rate, days_to_exp));
 
      return 0;
 }
