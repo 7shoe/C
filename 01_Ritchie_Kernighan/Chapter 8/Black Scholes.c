@@ -63,21 +63,6 @@ double callValue(double strike, double s, double sd, double r, double days){
      return s * nd1 - strike * exp(-r * t) * nd2;
 }
     
-double putValue(double strike, double s, double sd, double r, double days){
-     double ls = log(s);
-     double lx = log(strike);
-     double t = days / 365;
-     double sd2 = pow(sd, 2);
-     double n = (ls - lx + r * t + sd2 * t / 2);
-     double sqrtT = sqrt(days / 365);
-     double d = sd * sqrtT;
-     double d1 = n / d;
-     double d2 = d1 - sd * sqrtT;
-     double nd1 = Normal(d1);
-     double nd2 = Normal(d2);
-     return strike * exp(-r * t) * (1 - nd2) - s * (1 - nd1);
-}
-
 int main(){
 
 
