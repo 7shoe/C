@@ -3,7 +3,7 @@
 
 int main(){
     float xx[5],yy[5],nr=0,dr=0;
-    float x[5]={60,61,62,63,65},y[5]={3.1,3.6,3.8,4.0,4.1};
+    float x[5]={60,61,62,63,65},y[5]={3.1, 3.6, 3.8, 4.0, 4.1, 7.8};
     double sum_y=0,sum_xy=0,sum_x=0,sum_xx=0,sum_x2=0,slope=0,intercept=0,reg;
     int i,n=5;
 
