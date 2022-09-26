@@ -25,9 +25,10 @@ int main(){
 
     double fac = pow(10, 2);
     slope=round(slope*fac)/fac;    
-       
+
     intercept=(sum_y- slope*sum_x)/n;
-    reg= intercept + (slope*64);
+    reg= intercept + (slope * 64.0);
+
     printf("Slope: %.2f\nIntercept: %.3f\nRegression: %.3f",slope,intercept,reg);
 
     return 0;
