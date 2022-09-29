@@ -19,6 +19,11 @@ int main(){
     printf("\n> ");
     c = getchar();
     printf("Got c: %d", scanf("%d", &c));
+    printf("\n\n Quadratic Polynomial is: %dx^{2} + %dx + %d\n", a, b, c);
+
+    // compute discriminant
+    
+    // compute roots
 
 
 
