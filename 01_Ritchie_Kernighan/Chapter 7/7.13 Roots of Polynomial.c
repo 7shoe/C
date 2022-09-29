@@ -7,7 +7,7 @@ int main(){
 
     // read parameters
     int a, b, c;
-    float d, x1, x2;
+    float d, x1, x2, im;
 
     printf("> ");
     a = getchar();
@@ -28,6 +28,10 @@ int main(){
     if(d > 0){
         x1 = ((-1.0) * b + sqrt(d)) / (2 * a);
         x2 = ((-1.0) * b - sqrt(d)) / (2 * a);
+        printf("Roots are real!\nx1=%.2f\nx2=%.2f", x1, x2);
+    }else{
+        im = sqrt((-1.0) * d);
+        printf("Roots are complex!\nx1=%.2f\nx2=%.2f", x1, x2);
     }
 
 
