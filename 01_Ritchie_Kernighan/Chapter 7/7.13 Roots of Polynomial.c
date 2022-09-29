@@ -30,12 +30,10 @@ int main(){
         x2 = ((-1.0) * b - sqrt(d)) / (2 * a);
         printf("Roots are real!\nx1=%.2f\nx2=%.2f", x1, x2);
     }else{
-        im = sqrt((-1.0) * d);
-        printf("Roots are complex!\nx1=%.2f\nx2=%.2f", x1, x2);
+        x1 = ((-1.0) * b) / (2 * a);
+        im = sqrt((-1.0) * d) / (2 * a);
+        printf("Roots are complex!\nx1=%.3f + %.3fi\nx2=%.3f - %.3fi", x1, x1, im, im);
     }
-
-
-
 
     return 0;
 }
