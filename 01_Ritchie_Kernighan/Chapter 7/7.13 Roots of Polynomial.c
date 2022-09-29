@@ -32,7 +32,7 @@ int main(){
     }else{
         x1 = ((-1.0) * b) / (2 * a);
         im = sqrt((-1.0) * d) / (2 * a);
-        printf("Roots are complex!\nx1=%.3f + %.3fi\nx2=%.3f - %.3fi", x1, x1, im, im);
+        printf("Roots are complex!\nx1=%.3f + %.3fi\nx2=%.3f - %.3fi", x1, im, x1, im);
     }
 
     return 0;
