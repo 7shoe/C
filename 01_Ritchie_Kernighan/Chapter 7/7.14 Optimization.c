@@ -4,7 +4,7 @@
    Date: November 18, 2018 */ 
 
 #include<stdio.h>
-#include<conio.h>
+#include<curses.h>
 #include<math.h>
 #include<stdlib.h>
 
@@ -16,12 +16,14 @@
    As you change f(x), change this function also. */
 #define   g(x)   3 + sin(x)
 
-void main(){
+void clrscr(void);
+
+int main(){
 
 	 float x0, x1, f0, f1, g0, e;
 	 int step = 1, N;
 
-	 clrscr();
+	 void clrscr();
 
      /* Inputs */
 	 printf("\nEnter initial guess:\n");
