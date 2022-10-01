@@ -36,8 +36,8 @@ void main(){
 	 do{
 		  g0 = g(x0);
 		  f0 = f(x0);
-		  if(g0 == 0.0)
-		  {
+
+		  if(g0 == 0.0){
 			   printf("Mathematical Error.");
 			   exit(0);
 		  }
@@ -45,21 +45,19 @@ void main(){
 		
 		  x1 = x0 - f0/g0;
 
-		
 		  printf("%d\t\t%f\t%f\t%f\t%f\n",step,x0,f0,x1,f1);
 		  x0 = x1;
 		  
 		  step = step+1;
 		
-		  if(step > N)
-		  {
+		  if(step > N){
 			   printf("Not Convergent.");
 			   exit(0);
 		  }
 		  
 		  f1 = f(x1);
 		  
-	 }while(fabs(f1)>e);
+	 }while(fabs(f1) > e);
 	
 	 printf("\nRoot is: %f", x1);
 	 getch();
