@@ -7,6 +7,7 @@
 #include<curses.h>
 #include<math.h>
 #include<stdlib.h>
+// #define clrscr(); system("cls");
 
 /* Defining equation to be solved.
    Change this equation to solve another problem. */
@@ -16,14 +17,12 @@
    As you change f(x), change this function also. */
 #define   g(x)   3 + sin(x)
 
-void clrscr(void);
-
 int main(){
 
 	 float x0, x1, f0, f1, g0, e;
 	 int step = 1, N;
 
-	 void clrscr();
+	 system("cls");
 
      /* Inputs */
 	 printf("\nEnter initial guess:\n");
@@ -63,4 +62,6 @@ int main(){
 	
 	 printf("\nRoot is: %f", x1);
 	 getch();
+
+     return 0;
 }
